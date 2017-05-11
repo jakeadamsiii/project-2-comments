@@ -1,0 +1,27 @@
+  <section id="hero3" class ="hero">
+<div class ="container">
+  <div class="row">
+
+
+    <div class="col-lg-5" id="login">
+<h3>Login</h3>
+
+<form method="POST" action="/login">
+  <div>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" required>
+  </div><br>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password2" required>
+  </div><br>
+
+  <button class="btn">Login</button><br>
+  <p>Or log in with <a href="<%= oauth.github.getLoginURL() %>">Github</a> or <a href="<%= oauth.facebook.getLoginURL() %>">Facebook</a></p>
+
+</form>
+</div>
+
+</div>
+</div>
+</section>

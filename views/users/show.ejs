@@ -1,0 +1,46 @@
+<section id="profilePage">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 ">
+        <img id="profilePic" src="<%= user.imageSRC %>" alt="<%= user.username %>">
+      </div>
+      <div id="btnBox" class="col-lg-6">
+        <h1 id="UserShowName"><%= user.username %></h1>
+        <h2><%= user.firstName %> <%= user.lastName %></h2>
+        <p><%= user.email %></p>
+        <% if(locals.isAuthenticated) { %>
+          <h2>Account Settings</h2>
+          <a href="/profile/edit" class="editbtn btn">Edit account</a>
+          <form method="POST" action="/profile">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="delbtn btn">Delete account</button>
+          </form>
+          <% } %>
+        </form>
+      </div>
+      <div class="col-lg-1" id="line"></div>
+
+      <% user.events.forEach((event)=>{ %>
+        <div class="saveforme infowindow col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4><%= event.eventName %></h4>
+              <p> <%= event.venue %></p>
+              <p><%= event.price %></p>
+              <p><%= event.date %></p>
+              <p><%= event.time %></p>
+            </div>
+          <div class="col-lg-6">
+            <a class="editbtn btn" href="<%= event.link %>" target="_blank">Buy tickets</a>
+            <form method="POST" action="/profile/events/<%= event.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="remove delbtn btn">Remove</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</section>

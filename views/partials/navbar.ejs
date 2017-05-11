@@ -1,0 +1,21 @@
+<header>
+      <nav class="container">
+        <ul>
+          <li class="menu">&#9776;</li>
+          <div class="dropdown">
+            <% if(locals.isAuthenticated) { %>
+                <li><a id="noline" href="/profile">Profile<img id="profileImg" src="<%= user.imageSRC %>" alt="<%= user.username %>"></a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+            <li><a href="/map">Map</a></li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+        <% } %>
+            <li><a href="/about">About</a></li>
+            <li><a href="/register">Home</a></li>
+            <li class="logo" ><img id="logoimg" src="../assets/images/logo.png"></li>
+            <li class="logo" id="logo"><a href="/register"><span>GIG</span> TONIGHT?</a></li>
+
+          </div>
+        </ul>
+      </nav>
+    </header>

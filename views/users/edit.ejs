@@ -1,0 +1,29 @@
+<section id="hero4" class ="hero">
+  <div class= "container">
+    <div class= "row">
+      <h3>Edit profile</h3>
+
+      <form method="POST" action="/profile">
+        <input type="hidden" name="_method" value="PUT">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" value="<%= user.username %>">
+        </div><br>
+        <div>
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" value="<%= user.firstName %>">
+        </div><br>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>">
+        </div><br>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" value="<%= user.email%>">
+        </div><br>
+
+        <button class="btn">Update</button>
+      </form>
+    </div>
+  </div>
+</section>
