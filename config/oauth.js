@@ -9,6 +9,7 @@ module.exports = {
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     scope: 'user:email',
     getLoginURL() {
+      console.log('hello');
       return `${this.loginURL}?client_id=${this.clientId}&scope=${this.scope}`;
     }
   },
@@ -20,6 +21,7 @@ module.exports = {
     clientSecret: process.env.FB_CLIENT_SECRET,
     scope: 'user:email',
     getLoginURL() {
+      console.log('hello');
       return `${this.loginURL}?client_id=${this.clientId}&redirect_uri=https://damp-oasis-81794.herokuapp.com`;
     }
   }
